@@ -1,0 +1,31 @@
+Data distribution:
+    -1: 54.57% (10051 instances)
+    1: 45.43% (8369 instances)
+Predicted distribution:
+    -1: 54.73% (10081 instances)
+    1: 45.27% (8339 instances)
+Field importance:
+    1. ssl_state: 35.64%
+    2. url_of_anchor: 14.82%
+    3. pref_suf: 12.54%
+    4. has_sub_domain: 6.01%
+    5. domain_Age: 5.09%
+    6. traffic: 5.04%
+    7. long_domain: 3.63%
+    8. tag_links: 3.55%
+    9. req_url: 3.34%
+    10. links_to_page: 1.60%
+    11. google_index: 1.29%
+    12. dns_record: 1.21%
+    13. page_rank: 0.97%
+    14. https_token: 0.80%
+    15. popup: 0.76%
+    16. submit_to_email: 0.74%
+    17. iframe: 0.66%
+    18. favicon: 0.64%
+    19. port: 0.42%
+    20. redirect: 0.39%
+    21. mouseover: 0.34%
+    22. SFH: 0.31%
+    23. long_url: 0.20%
+    24. double_slash_redirect: 0.03%
