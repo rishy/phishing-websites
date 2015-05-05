@@ -190,6 +190,10 @@ Identification of the possible phishing websites is done in `R` with `caret`.
 * <b>Datasets\\</b> - contains CSV Data files used in BigML and R Script
 * <b>attributes.txt </b>- contains info about the attributes in Dataset
 * <b>phishing.R</b> - R Script to apply treebag model(similar to BigML-ensemble)
+* <b>Conclusion.pdf</b> - Anwer for - do you think these predictions are good?
+* <b>BigML_classification.py</b> - Python Script for calling and running ensemble model on BigML API
+* <b>BigML_summary.txt</b> - Summary of BigML model
+
 
 ###  Results
 I was able to get <b>96.4%</b> accuracy with the `treebag` model. Here is a plot for the variable importance in the tree bag model. 
