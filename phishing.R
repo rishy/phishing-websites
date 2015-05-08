@@ -26,8 +26,10 @@ train_in <- createDataPartition(y = data$target, p = 0.75, list = FALSE)
 training <- data[train_in,]
 testing <- data[-train_in,]
 
-# trainControl for Logisitic Regression
-fitControl <- trainControl(method = 'repeatedcv', repeats = 10,
+####################### Boosted Logistic Regression ########################
+
+# trainControl for Boosted Logisitic Regression
+fitControl <- trainControl(method = 'repeatedcv', repeats = 5,
                            number = 5, verboseIter = T)
 
 # Run a Boosted logisitic regression over the training set
@@ -39,7 +41,8 @@ log.predict <- predict(log.fit, testing[,-31])
 
 confusionMatrix(log.predict, testing$target)
 
-##### Using a SVM with a Radial Kernel for prediction
+####################### SVM - RBF Kernel ########################
+
 # trainControl for Radial SVM
 fitControl = trainControl(method = "repeatedcv", repeats = 5, number = 5,
                           verboseIter = T)
@@ -53,7 +56,7 @@ rbfsvm.predict <- predict(rbfsvm.fit, testing[,-31])
 
 confusionMatrix(rbfsvm.predict, testing$target)
 
-##### Using a Treebag
+####################### TreeBag ########################
 
 # trainControl for Treebag
 fitControl = trainControl(method = "repeatedcv", repeats = 5, number = 5,
@@ -67,3 +70,20 @@ treebag.fit <- train(target ~ .,  data = training, method = "treebag",
 treebag.predict <- predict(treebag.fit, testing[,-31])
 
 confusionMatrix(treebag.predict, testing$target)
+
+####################### Random Forest ########################
+
+# trainControl for Random Forest
+fitControl = trainControl(method = "repeatedcv", repeats = 5, number = 5,
+                          verboseIter = T)
+
+# Run a Treebag classification over the training set
+rf.fit <- train(target ~ .,  data = training, method = "rf",
+                     importance = T, trControl = fitControl, tuneLength = 5)
+
+# Predict the testing target
+rf.predict <- predict(rf.fit, testing[,-31])
+
+confusionMatrix(rf.predict, testing$target)
+
+plot(varImp(rf.fit))
