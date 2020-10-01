@@ -1,4 +1,4 @@
-# Phishing Websites Predictions
+# Phishing Websites Predictions-A beautiful website
 
 This project uses [Phishing Websites](archive.ics.uci.edu/ml/datasets/Phishing+Websites) dataset from UCI machine learning Datasets. The objective is to identify whether a website is a Phishing website one or not.
 
