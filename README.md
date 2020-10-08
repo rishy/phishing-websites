@@ -174,28 +174,28 @@ Here is a list of all the attributes in the dataset, along with their possible v
     
 </table>
 
-All the attributes having a binary value space are generally denoting the absence or presence of respective attribute. Attributes with three possible values are generally representing the strength(low, medium, high).
+All the attributes having a binary value space are generally denoting the absence or presence of respective attribute . Attributes with three possible values are generally representing the strength (low, medium, high).
 
-### R Script
+### R Script :- 
 Identification of the possible phishing websites is done in `R` with `caret`.
 
-* The R script - <b>phishing.R</b> initially load the required libraries and the dataset from <b>phishing.csv</b> file
-* Column names are set using `names` array(as shown in codebook above)
-* Dataset is then split into training and test set useing caret's `createDataPartition` method
-* Then three different models are applied on the training dataset - `boosted Logistic Regression`, `SVM with RBF Kernel`, `Tree Bag`
-* For each model we get the `confusionMatrix` after predicting the samples from test set
+* The R script - <b>phishing.R</b> initially load the required libraries and the dataset from <b>phishing.csv</b> file .
+* Column names are set using `names` array(as shown in codebook above) .
+* Dataset is then split into training and test set useing caret's `createDataPartition` method .
+* Then three different models are applied on the training dataset - `boosted Logistic Regression`, `SVM with RBF Kernel`, `Tree Bag` .
+* For each model we get the `confusionMatrix` after predicting the samples from test set .
  
-### Codebase Structure
-* <b>Ipython Notebooks\\</b> - contains ipython notebooks used with `BigML` and to paritition train and test set
-* <b>Datasets\\</b> - contains CSV Data files used in BigML and R Script
-* <b>attributes.txt </b>- contains info about the attributes in Dataset
-* <b>phishing.R</b> - R Script to apply treebag model(similar to BigML-ensemble)
+### Codebase Structure :- 
+* <b>Ipython Notebooks\\</b> - contains ipython notebooks used with `BigML` and to paritition train and test set .
+* <b>Datasets\\</b> - contains CSV Data files used in BigML and R Script .
+* <b>attributes.txt </b>- contains info about the attributes in Dataset .
+* <b>phishing.R</b> - R Script to apply treebag model(similar to BigML-ensemble) .
 * <b>Conclusion.pdf</b> - Anwer for - do you think these predictions are good?
-* <b>BigML_classification.py</b> - Python Script for calling and running ensemble model on BigML API
-* <b>BigML_summary.txt</b> - Summary of BigML model
+* <b>BigML_classification.py</b> - Python Script for calling and running ensemble model on BigML API .
+* <b>BigML_summary.txt</b> - Summary of BigML model .
 
 
-###  Results
+###  Results :- 
 I was able to get <b>96.4%</b> accuracy with the `treebag` model. Here is a plot for the variable importance in the tree bag model. 
 
 ![var imp](varImp1.png)
